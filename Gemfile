@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.0.3"
 
 gem "rails", "~> 7.0.2", ">= 7.0.2.3"
+gem 'sassc', '~> 2.1.0' #necesario para instalar bootstrap-sass
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem "sprockets-rails"
 gem "puma", "~> 5.0"
 gem "importmap-rails"
