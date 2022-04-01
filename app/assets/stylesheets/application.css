@@ -13,4 +13,44 @@
  *= require_tree .
  *= require_self
  */
- 
+ @import "bootstrap";
+ #logo {
+     float: left;
+     font-size: 1.7em;
+     text-transform: uppercase;
+     letter-spacing: -1px;
+     font-weight: bold;
+ }
+
+ #logo:hover {
+    text-decoration: none;
+ }
+
+ .center {
+     text-align: center;
+ }
+
+ footer {
+     margin-top: 45px;
+     padding-top: 5px;
+     border-top: 1px solid #a1a1a1;
+     color: #777;
+
+ }
+footer:hover {
+    color: #222
+}
+
+footer small {
+    float: left;
+}
+
+footer ul {
+    float:right;
+    list-style: none;
+}
+
+footer ul li {
+    float:left;
+    margin-left: 15px;
+}
