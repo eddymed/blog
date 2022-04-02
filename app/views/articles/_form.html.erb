@@ -11,17 +11,24 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
+<div class="mb-3">
+    <%= form.label :title, class:"form-label" %>
+    <%= form.text_field :title, class:"form-control", placeholder: "Titulo del articulo", autofocus: true %>
+</div>
 
-  <div>
-    <%= form.submit %>
+<div class="mb-3">
+    <%= form.label :description, class:"form-label" %>
+    <%= form.text_area :description, class: "form-control", rows:"5" %>
+</div>
+
+  <div class=mb-3>
+
+    <%= form.submit class:"btn btn-primary" %>
+
   </div>
 <% end %>
+
+<div class=mb-3>
+<%= link_to "Cancelar y regresar a Articulos", articles_path %>
+</div>
