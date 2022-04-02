@@ -1,23 +1,20 @@
-<p style= "color: green">
-<%= notice %>
-</p>
-
-<h1>Lista de Articulos</h1>
-
-<table>
-  <tr>
-    <th>Titulo</th>
-    <th>Descripcion</th>
-  </tr>
-  <% @articles.each do |article| %>
-  <tr>
-    <td><%= article.title %></td>
-    <td><%= article.description %></td>
-    <td><%= link_to "Show", article_path(article) %></td>
-    
-  </tr>
-  <% end %>
-
-  </table>
-  <p><%= link_to "Nuevo articulo", new_article_path %></p>
-  <p><%= link_to "Home", root_path %></p>
+<p style= "color: green"><%= notice %></p>
+<h2 align="center">Lista de Articulos</h2>
+<% @articles.each do |article| %>
+<br/>
+  <h3 align="center">Titulo: 
+    <%= link_to article.title, article_path(article) %>
+  </h3>
+  <h4><strong>Descripcion</strong></h4>
+  <div class="card">
+    <div class="card-body">
+      <%= truncate(article.description, length: 100) %> 
+    </div>
+  </div>
+  <div class="btn-group" role="group" aria-label="Basic outlined example">
+    <%= link_to "Editar articulo", edit_article_path(article), class: "btn btn-outline-primary" %>
+    <%= button_to "Borrar Articulo", article_path(article), method: :delete, 
+                                class: "btn btn-danger" %>
+  </div>
+  <br/>
+<% end %>  
