@@ -14,11 +14,10 @@
     <td><%= article.title %></td>
     <td><%= article.description %></td>
     <td><%= link_to "Show", article_path(article) %></td>
-    <td><%= link_to "Edit", edit_article_path(article) %></td>
-    <td><%= link_to "Delete", article_path(article), method: :destroy, data: {confirm: "Esta seguro?"} %></td>
+    
   </tr>
   <% end %>
 
   </table>
-  <p><%= link_to "New article", new_article_path %></p>
+  <p><%= link_to "Nuevo articulo", new_article_path %></p>
   <p><%= link_to "Home", root_path %></p>

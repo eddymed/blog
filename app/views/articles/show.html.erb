@@ -1,12 +1,18 @@
-<p style= "color: green">
-<%= notice %>
-</p>
+<p style="color: green"><%= notice %></p>
 
-<%= render @article %>
+<h2 align="center">Titulo: <%= @article.title%></h2>
 
-<div>
-  <%= link_to "Edita este articulo", edit_article_path(@article) %> |
-  <%= link_to "Regresar a Articulos", articles_path %>
-
-  <%= button_to "Borrar Articulo", @article, method: :delete %>
+<h4><strong>Descripcion</strong></h4>
+<div class="card">
+  <div class="card-body">
+   <%= simple_format(@article.description) %> 
+  </div>
+</div>
+<br/>
+  
+<div class="btn-group" role="group" aria-label="Basic outlined example">
+  <%= link_to "Ver articulos", articles_path, class: "btn btn-outline-primary" %>
+  <%= link_to "Editar articulo", edit_article_path(@article), class: "btn btn-outline-primary" %>
+  <%= button_to "Borrar Articulo", article_path(@article), method: :delete, 
+                                class: "btn btn-danger" %>
 </div>
