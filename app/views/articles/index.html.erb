@@ -3,16 +3,16 @@
 <% @articles.each do |article| %>
   <br/>
   <div class="card">
-   <h3><%= link_to article.title, article_path(article) %></h3>
+   <h4><%= link_to article.title, article_path(article) %></h4>
    
     <div class="card-body">
       <%= truncate(article.description, length: 100) %> 
     </div>   
   </div>
   <div class="btn-group" role="group" aria-label="Basic outlined example">
-    <%= link_to "Editar articulo", edit_article_path(article), class: "btn btn-outline-primary" %>
+    <%= link_to "Editar articulo", edit_article_path(article), class: "btn btn-outline-primary btn-sm" %>
     <%= button_to "Borrar Articulo", article_path(article), method: :delete, 
-                                  class: "btn btn-danger" %>
+                                  class: "btn btn-danger btn-sm" %>
   </div>
   <br/>
 <% end %>  
