@@ -1,12 +1,13 @@
 class User < ActiveRecord::Base
-    vatidates :username, 
+        has_many :articles 
+        before_save { self.email = email.downcase}
+    validates :username, 
             presence: true, length: { minimum: 3, maximum: 25 }, 
             uniqueness: { case_sensitive: false }
             
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-    vatidates :email, 
+    validates :email, 
             presence: true, length: { maximum: 105 }, 
-            format: { with: VALID_EMAIL_REGEX } 
-            
+            format: { with: VALID_EMAIL_REGEX }        
 end
