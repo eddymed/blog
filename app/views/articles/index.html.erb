@@ -4,9 +4,15 @@
   <br/>
   <div class="card">
    <h4><%= link_to article.title, article_path(article) %></h4>
-   
+   <div>
+      <small>Creado por: <%= article.user.username %>, 
+                        <%= time_ago_in_words(article.created_at) %> ago,
+                      last update: <%= time_ago_in_words(article.updated_at) %> ago 
+      </small>
+      </div>
     <div class="card-body">
       <%= truncate(article.description, length: 100) %> 
+      
     </div>   
   </div>
   <div class="btn-group" role="group" aria-label="Basic outlined example">
